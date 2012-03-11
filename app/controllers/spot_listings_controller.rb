@@ -44,7 +44,7 @@ class SpotListingsController < ApplicationController
     @spot_listing.completed = false
     respond_to do |format|
       if @spot_listing.save
-        format.html { redirect_to user_dashboard_url, notice: 'Spot listing was successfully created.' }
+        format.html { redirect_to user_dashboard_url, notice: 'Your listing has been successfully created' }
         format.json { render json: @spot_listing, status: :created, location: @spot_listing }
       else
         format.html { render action: "new" }

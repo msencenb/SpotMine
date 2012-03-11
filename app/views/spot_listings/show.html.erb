@@ -20,10 +20,10 @@
 		                    <div class="one_half last">
 								<h3>Borrower: <%= @user.first_name %> <%= @user.last_name %></h3>
 								<div class="one_half">
-									<%= image_tag @user.picture.url(:medium) %>
+									<%= image_tag @user.picture.url(:thumb) %>
 								</div>
 								<div class="one_half last">
-									User description here
+									<%= @user.description %>
 								</div>
 							</div>
 						</div>
