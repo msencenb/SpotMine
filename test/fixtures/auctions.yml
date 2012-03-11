@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  winner_id: 1
+  description: MyText
+  title: MyString
+  time_left: 2012-03-08 19:35:56
+
+two:
+  user_id: 1
+  winner_id: 1
+  description: MyText
+  title: MyString
+  time_left: 2012-03-08 19:35:56

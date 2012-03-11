@@ -1,0 +1,22 @@
+<div class="container clearfix">
+	<div id="main-holder" role="main">	
+		<section id="main-content">
+	    	<div class="columns">
+	            <div class="block clearfix">
+	            <header class="section-headline">
+	                <h3><span class="blue">Ask for a spot</span></h3>
+	            </header>
+				<% if current_user %>
+					<%= render 'form' %>
+				<% else %>
+				<div class="full_column">
+					<div class="container">
+						<%= render 'account_form', :header => "to ask for a spot"%>
+					</div>
+				</div>
+				<% end %>
+				</div>
+			</div>
+		</sectin>
+	</div>
+</div>

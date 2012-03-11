@@ -1,0 +1,346 @@
+/* 
+  Pricelr!
+  CCS3/jQuery pricing tables framework. "pr-" prefix used
+*/
+
+
+
+/* General Pricelr! styles
+----------------------------------------------------------------------------------------------------*/
+.pr-pricing-tables {
+  width: 100%;
+  max-width: 1140px;
+  margin: 10px auto 10px auto;
+  overflow: hidden;
+  padding:0 10px 0 10px;
+}
+.pr-price-box {
+  background:transparent;
+  text-align:center;
+  margin:10px 0 20px 0;
+  width:25%;
+  height:auto;
+  float:left;
+  -moz-box-shadow:1px 2px 10px #ccc;
+  -webkit-box-shadow:1px 2px 10px #ccc;
+  opacity: .75; /* Standard: FF gt 1.pr-5, Opera, Safari */
+  filter: alpha(opacity=55); /* IE lt 8 */
+  -ms-filter: "alpha(opacity=55)"; /* IE 8 */
+  -khtml-opacity: .55; /* Safari 1.pr-x */
+  -moz-opacity: .55; /* FF lt 1.pr-5, Netscape */
+  position:relative
+}
+
+.pr-pretty-hover {
+  opacity: 100; /* Standard: FF gt 1.pr-5, Opera, Safari */
+  filter: alpha(opacity=100); /* IE lt 8 */
+  -ms-filter: "alpha(opacity=100)"; /* IE 8 */
+  -khtml-opacity: 100; /* Safari 1.pr-x */
+  -moz-opacity: 100; /* FF lt 1.pr-5, Netscape */
+  z-index:100;
+  -moz-box-shadow:1px 2px 15px #333;
+  -webkit-box-shadow:1px 2px 15px #333;
+}
+.pr-price-box-header {
+  width:100%;
+  padding: 0 0 5px 0;
+  margin:0;
+}
+.pr-price-box-header h3 {
+  margin:0 0 0 0;
+  padding: 10px 0 5px;
+  text-transform:uppercase;
+  font-size:18px;
+  font-weight:700;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.32);
+}
+.pr-price-box-header h4 {
+  color:#fff;
+  margin:5px 0 0 0;
+  padding:0 0 0 0;
+  font-size:36px;
+  font-style:normal;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.65);
+}
+.pr-price-box-header p {
+  color:#EDF3F7;
+  margin:5px 0 0 0;
+  padding:0 0 0 0;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.65);
+}
+.pr-price-box ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.pr-price-box li {
+  margin:0 0 0 0;
+  padding:5px 0 5px 0;
+  display:block;
+  float:left;
+  width:100%;
+  background: #EAEAEA;
+}
+.pr-price-box h2 {
+  margin:10px 0 25px 0;
+}
+.pr-price-box p {
+  margin:5px 0 5px 0;
+  font-size:10px
+}
+.pr-odd { 
+  background:#f5f5f5 url(../images/pricelr/overlay.png) repeat-x !important;
+}
+.pr-even {
+  background:#ccc url(../images/pricelr/overlay.png) repeat-x !important;
+}
+
+.pr-price-box .pr-button{
+  width:150px;
+  height:25px;
+  margin:2px 0 2px 0;
+  font-weight:bold;
+  padding-top:20px
+}
+.pr-code {
+  background:#fff;
+  font-size:16px;
+  text-align:center;
+  border:1px dashed #777;
+  color:#777;
+  padding:8px 12px
+}
+
+/* Ribbons&indicators
+----------------------------------------------------------------------------------------------------*/
+
+.pr-hot, .pr-new, .pr-best, .pr-free, .pr-5off, .pr-10off, .pr-15off, .pr-20off, .pr-25off, .pr-30off, .pr-35off, .pr-40off, .pr-45off, .pr-50off, .pr-60off,   .pr-70off, .pr-80off, .pr-90off {
+  position:absolute;left:0;margin-left:-1px;
+  background-repeat:no-repeat;
+  background-position:0 0;
+  width:53px;
+  height:51px;
+}
+
+.pr-hot  {background-image:url(../images/pricelr/hot.png);}
+.pr-new {background-image:url(../images/pricelr/new.png);}
+.pr-best {background-image:url(../images/pricelr/best.png);}
+.pr-free {background-image:url(../images/pricelr/free.png);}
+.pr-5off {background-image:url(../images/pricelr/5.png);}
+.pr-10off {background-image:url(../images/pricelr/10.png);}
+.pr-15off {background-image:url(../images/pricelr/15.png);}
+.pr-20off {background-image:url(../images/pricelr/20.png);}
+.pr-25off {background-image:url(../images/pricelr/25.png);}
+.pr-30off {background-image:url(../images/pricelr/30.png);}
+.pr-35off {background-image:url(../images/pricelr/35.png);}
+.pr-40off {background-image:url(../images/pricelr/40.png);}
+.pr-45off {background-image:url(../images/pricelr/45.png);}
+.pr-50off {background-image:url(../images/pricelr/50.png);}
+.pr-60off {background-image:url(../images/pricelr/60.png);}
+.pr-70off {background-image:url(../images/pricelr/70.png);}
+.pr-80off {background-image:url(../images/pricelr/80.png);}
+.pr-90off {background-image:url(../images/pricelr/90.png);}
+
+.pr-indicator {
+  margin:0 0 0 0;
+  width:32px;
+  height:32px;
+}
+
+.pr-extra {
+  position: absolute;
+  display: none;
+}
+
+/* CSS3 Buttons
+----------------------------------------------------------------------------------------------------*/
+
+
+.pr-button, .pr-button:visited {
+ background:   url(../images/pricelr/overlay.png) repeat-x; 
+ display: inline-block; 
+ padding: 5px 10px 6px; 
+ color: #fff; 
+ text-decoration: none;
+ -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+ -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+ text-shadow: 0 -1px 1px rgba(0,0,0,0.65);
+ border-bottom: 1px solid rgba(0,0,0,0.65);
+ position: relative;
+ cursor: pointer;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  font-size: 12px; 
+}
+ 
+.pr-button:hover {border-bottom: 1px solid rgba(0,0,0,0.65);color: #fff;}
+.pr-button:active {top: 1px;}
+.pr-small.pr-button, .pr-small.pr-button:visited {font-size:11px}
+.pr-button, .pr-button:visited,
+.pr-medium.pr-button, .pr-medium.pr-button:visited {
+  font-size:12px; 
+  font-weight:bold; 
+  text-transform:capitalize;
+  line-height:1; 
+  text-shadow:0 -1px 1px rgba(0,0,0,0.25); 
+}
+.pr-button, .pr-button:visited {background-color: #ff6000;  text-transform:uppercase;}
+.pr-button:hover {background-color:#ce4d00;}
+
+
+/* Color styles
+----------------------------------------------------------------------------------------------------*/
+
+/* Orange */
+.pr-orange .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#de5200
+}
+.pr-orange .pr-price-box-header h3 {color:#160800;}
+.pr-orange .pr-button, .pr-orange .pr-button:visited {background-color: #de5200;}
+.pr-orange .pr-button:hover {background-color:#ad4000;}
+
+/* Blue */
+.pr-blue .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#0063b7
+}
+.pr-blue .pr-price-box-header  h3 {color:#000c16;}
+.pr-blue  .pr-button, .pr-blue  .pr-button:visited {background-color: #0063b7;}
+.pr-blue  .pr-button:hover {background-color:#004178;}
+
+/* Green */
+.pr-green .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#697b18
+}
+.pr-green .pr-price-box-header  h3 {color:#0b0d00;}
+.pr-green .pr-button, .pr-green .pr-button:visited {background-color: #697b18;}
+.pr-green .pr-button:hover {background-color:#586b00;}
+
+/* Red */
+.pr-red .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#cb0000
+}
+.pr-red .pr-price-box-header  h3 {color:#3e0000;}
+.pr-red .pr-button, .pr-red .pr-button:visited {background-color: #cb0000;}
+.pr-red .pr-button:hover {background-color:#a20000;}
+
+/* Grey */
+.pr-grey .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#555
+}
+.pr-grey .pr-price-box-header  h3 {color:#000000;}
+.pr-grey .pr-button, .pr-grey .pr-button:visited {background-color: #555;}
+.pr-grey .pr-button:hover {background-color:#444;}
+
+/* Olive */
+.pr-olive .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#90976B
+}
+.pr-olive .pr-price-box-header  h3 {color:#0e0f0b;}
+.pr-olive .pr-button, .pr-olive .pr-button:visited {background-color: #90976B;}
+.pr-olive .pr-button:hover {background-color:#54583f;}
+
+/* Magenta */
+.pr-magenta .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#a62480
+}
+.pr-magenta .pr-price-box-header  h3 {color:#18000e;}
+.pr-magenta .pr-button, .pr-magenta .pr-button:visited {background-color: #a62480;}
+.pr-magenta .pr-button:hover {background-color:#ad007a;}
+
+/* Cyan */
+.pr-cyan .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#008cc0
+}
+.pr-cyan .pr-price-box-header  h3 {color:#002634;}
+.pr-cyan .pr-button, .pr-cyan .pr-button:visited {background-color: #008cc0;}
+.pr-cyan .pr-button:hover {background-color:#006e97;}
+
+/* Coffee */
+.pr-coffee .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#524535
+}
+.pr-coffee .pr-price-box-header  h3 {color:#0d0700;}
+.pr-coffee .pr-button, .pr-coffee .pr-button:visited {background-color: #524535;}
+.pr-coffee .pr-button:hover {background-color:#2e261d;}
+
+/* Copper */
+.pr-copper .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#862B28
+}
+.pr-copper .pr-price-box-header  h3 {color:#18000e;}
+.pr-copper .pr-button, .pr-copper .pr-button:visited {background-color: #862B28;}
+.pr-copper .pr-button:hover {background-color:#521716;}
+
+/* Teal */
+.pr-teal .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#236865
+}
+.pr-teal .pr-price-box-header  h3 {color:#18000e;}
+.pr-teal .pr-button, .pr-teal .pr-button:visited {background-color: #236865;}
+.pr-teal .pr-button:hover {background-color:#15403e;}
+
+/* Purple */
+.pr-purple .pr-price-box-header {
+  background-image:url(../images/pricelr/pr-box-overlay.png);
+  background-repeat:repeat-x;
+  background-color:#50435F
+}
+.pr-purple .pr-price-box-header  h3 {color:#18000e;}
+.pr-purple .pr-button, .pr-purple .pr-button:visited {background-color: #50435F;}
+.pr-purple .pr-button:hover {background-color:#31283a;}
+
+/* jQuery Tipsy tooltips style
+----------------------------------------------------------------------------------------------------*/
+
+
+.tipsy { text-transform:lowercase;padding: 5px; font-size: 17px; opacity: 0.pr-8; filter: alpha(opacity=80); background-repeat: no-repeat;  background-image: url(../images/pricelr/tipsy.gif); }
+  .tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
+  .tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; line-height:20px}
+  .tipsy-north { background-position: top center; }
+  .tipsy-south { background-position: bottom center; }
+  .tipsy-east { background-position: right center; }
+  .tipsy-west { background-position: left center; }
+
+
+
+/* Layout for mobile version */
+
+@media handheld, only screen and (max-width: 767px) {
+}
+
+/* Provide higher res assets for iPhone 4 */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+}
+
+.pr-price-box:hover, .pr-price-box.selected {
+  opacity: 100; /* Standard: FF gt 1.pr-5, Opera, Safari */
+  filter: alpha(opacity=100); /* IE lt 8 */
+  -ms-filter: "alpha(opacity=100)"; /* IE 8 */
+  -khtml-opacity: 100; /* Safari 1.pr-x */
+  -moz-opacity: 100; /* FF lt 1.pr-5, Netscape */
+  z-index:100;
+  -moz-box-shadow:1px 2px 10px #999;
+  -webkit-box-shadow:1px 2px 10px #999;
+}

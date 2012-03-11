@@ -1,0 +1,47 @@
+<div class="container clearfix">
+	<div id="main-holder" role="main">	
+		<section id="main-content">
+	    	<div class="columns">
+	            <div class="block clearfix">
+	            <header class="section-headline">
+	                <h3>Spot <span class="blue"><%= @user.first_name %></span></h3>
+	            </header>
+	            	<div class="full_column">
+	                	<header class="box-headline">
+		                    <h4><%= @auction.title %></h4>
+		                </header>
+						<div class="content">
+		                    <div class="one_half">
+		                    	<p><strong>Description:</strong></p>
+		                        <p><%= @auction.description %></p>
+		                    </div>
+							<div class="one_half last">
+								<p>Offered by <%= @auction.user.first_name %></p>
+								<%= image_tag @user.picture.url(:thumb) %>
+							</div>
+							<div class="one_half">
+								<p>Current high bid: <%= @high_bid %> gems
+								<% if @high_bid != 0 %>
+									<p>Current high bidder: <%= @bids[0].user.first_name + " " + @bids[0].user.last_name %>
+							    <% end %>
+							</div>
+							<div class="clear">
+								<% if current_user %>
+									<%= form_for(@bid) do |f|%>
+										<h3>Place a bid!</h3>
+										<%= f.hidden_field :auction_id, :value => @auction.id %>
+										<div>
+											Amount: <%= f.text_field :amount %><%= f.submit "Place Bid", :class => "rounded-button blue" %>
+										</div>
+									<% end %>
+								<% else %>
+									<%= render 'spot_listings/account_form', :header => "to bid on this auction"%>
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

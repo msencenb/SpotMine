@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+	<title>SpotMine</title>
+	<meta name="description" content="">
+  	<meta name="author" content="">
+	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+  	<%= stylesheet_link_tag    "application", :media => "all" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
+</head>
+<body id="top">
+	<header id="main">
+
+	<div class="container">
+	  <div class="logo">
+			
+	      <%= link_to image_tag("SpotMineLogo.png"), root_url %>
+	      <div class="lines"><p class="subtitle">Zero Interest Loans</p></div>
+	  </div>    
+	</div><!-- end of .logo -->
+
+	<!-- Primary navigation -->
+	<nav id="main-nav">
+	<div class="container">
+	  <ul class="sf-menu">
+	      <li><%= link_to "Home", root_url%></li>
+	      <li><%= link_to "Lend Money", browse_listings_path %>
+	      </li>
+	      <li><%= link_to "Borrow Money", new_spot_listing_path %>
+	      </li>
+	      <li><%= link_to "Social Interest Auctions", auction_listings_path %></li>
+		  <% if current_user %>
+		  <li><%= link_to "Dashboard", user_dashboard_path %></li>
+		  <li><%= link_to "Logout", logout_path %></li>
+		  <% else %>
+		  <li><%= link_to "Login", login_path %></li>
+		  <% end %>
+	  </ul>
+	</div>    
+	</nav>
+	<!-- End Primary navigation -->
+
+	<div class="clearfix"></div>
+	</header><!--! end of header -->
+	<%= yield %>
+	<div class="footer clearfix">
+		<div class="container">
+		</div> <!-- end of #container -->     
+	</div>
+<!-- end of footer -->
+<p id="back-top"><a href="#top"><span></span></a></p>
+</body>
+</html>

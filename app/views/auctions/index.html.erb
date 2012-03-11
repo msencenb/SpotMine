@@ -1,0 +1,31 @@
+<h1>Listing auctions</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Winner</th>
+    <th>Description</th>
+    <th>Title</th>
+    <th>Time left</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @auctions.each do |auction| %>
+  <tr>
+    <td><%= auction.user_id %></td>
+    <td><%= auction.winner_id %></td>
+    <td><%= auction.description %></td>
+    <td><%= auction.title %></td>
+    <td><%= auction.time_left %></td>
+    <td><%= link_to 'Show', auction %></td>
+    <td><%= link_to 'Edit', edit_auction_path(auction) %></td>
+    <td><%= link_to 'Destroy', auction, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Auction', new_auction_path %>

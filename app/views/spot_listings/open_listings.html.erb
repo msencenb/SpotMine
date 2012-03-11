@@ -1,0 +1,33 @@
+<div class="container clearfix">
+	<div id="main-holder" role="main">	
+		<section id="main-content">
+	    	<div class="columns">
+	            <div class="block clearfix">
+            
+	            <header class="section-headline">
+	                <h3>Lend <span class="blue">Money</span></h3>
+	            </header>
+
+	            <% @spot_listings.each do |spot_listing| %>
+	            	<div class="full_column">
+	                	<header class="box-headline">
+		                    <h4><%= spot_listing.title %></h4>
+		                </header>
+                
+		                <div class="content">
+		                    <div class="one_half">
+		                    	<h3>Amount Needed: <%= number_to_currency(spot_listing.amount, :unit => "$")%></h3>
+		                        <p><%= spot_listing.description %></p>
+		                    </div>
+		                    <div class="one_half last">
+								<h3>Borrower: <%= spot_listing.user.first_name %></h3>
+								<p><%= link_to "More Info", spot_listing, :class => "round-button blue" %></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		</section>
+	</div>
+</div>

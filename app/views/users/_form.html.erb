@@ -1,0 +1,61 @@
+<div class="container clearfix">
+	<div id="main-holder" role="main">	
+		<section id="main-content">
+	    	<div class="columns">
+	            <div class="block clearfix">
+	            <header class="section-headline">
+	                <h3><span class="blue">Create Account</span></h3>
+	            </header>
+	            <div class="container">
+					<%= form_for(@user) do |f| %>
+					  <% if @user.errors.any? %>
+					    <div id="error_explanation">
+					      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+					      <ul>
+					      <% @user.errors.full_messages.each do |msg| %>
+					        <li><%= msg %></li>
+					      <% end %>
+					      </ul>
+					    </div>
+					  <% end %>
+					  <div class="field">
+					    <%= f.label :email %><br />
+					    <%= f.text_field :email %>
+					  </div>
+					  <div class="field">
+					    <%= f.label :password %><br />
+					    <%= f.password_field :password %>
+					  </div>
+					  <div class="field">
+					    <%= f.label :password_confirmation %><br />
+					    <%= f.password_field :password_confirmation %>
+					  </div>
+					  <div class="field">
+					    <%= f.label :first_name %><br />
+					    <%= f.text_field :first_name %>
+					  </div>
+					  <div class="field">
+					    <%= f.label :last_name %><br />
+					    <%= f.text_field :last_name %>
+					  </div>
+					  <div class="field">
+						<%= f.label "Description of yourself" %>
+						<%= f.text_area :description %>
+					  </div>
+					  <div class="field">
+						<%= f.label :picture %>
+						<%= f.file_field :picture %>
+					  </div>
+					  <div class="actions">
+					    <%= f.submit "Sign Up"%>
+					  </div>
+					<% end %>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+
+
+

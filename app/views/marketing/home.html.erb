@@ -1,0 +1,65 @@
+<div class="container clearfix">
+<div id="main-holder" role="main">
+<section id="main-content">
+  <div class="columns">
+      <div class="clearfix"></div>
+      <div class="block clearfix services">
+          <header class="section-headline">
+              <h3>Spot a Friend <span class="blue amp">&amp;</span> Earn Gems</h3>
+          </header>
+          <div class="one_third main-holder">
+              <header class="box-headline">
+                  <h4>Lend A Friend</h4>
+              </header>
+              <figure>
+                  <a href="#">
+				  	<%= image_tag "present.png" %>
+                  </a>
+              </figure>
+              <div class="content">
+                  <p>Sometimes your <strong>friends need a helping hand</strong>. Spot them money today to <strong>show your support</strong> (its a loan so you will be paid back), and also receive gems you can redeem for projects such as web design, construction, and much more!</p>
+                  <p><%= link_to browse_listings_path, :class => "read-more" do %>
+					Lend Money Now!<span>&rarr;</span>
+					 <% end %>
+				  </p>
+              </div>
+          </div>
+          <div class="one_third main-holder">
+              <header class="box-headline">
+                  <h4>Borrow Money</h4>
+              </header>
+              <figure>
+                  <a href="#">
+				  <%= image_tag "coins.png" %>
+                  </a>
+              </figure>
+              <div class="content">
+                  <p><strong>Asking for money is awkward.</strong> Spotmine eliminates this awkwardness through the social currency called gems. When someone lends you money they get a certain amount of gems they can spend to complete projects, so they get a little something extra as well!</p>
+                  <p><a class="read-more" href="#">Borrow Money Today!<span>&rarr;</span></a></p>
+              </div>
+          </div>
+          <div class="one_third main-holder">
+              <header class="box-headline">
+                  <h4>Social Interest - Gems</h4>
+              </header>
+              <figure>
+                  <a href="#">
+                 	<%= image_tag "gem.png"%>
+                  </a>
+              </figure>
+              <div class="content">
+                  <p>When you lend money you get gems. When you receive money you have to pay back gems (in addition to fulfilling your loan). This <strong>'social interest'</strong> ensures there is less awkwardness between friends, but also allows you to get a lower rate than a traditional bank loan.</p>
+                  <p><a class="read-more" href="#">View Gem Auctions <span>&rarr;</span></a></p>
+              </div>
+          </div>
+      </div><!--! end of .about-us -->
+               
+  </div>
+</section><!--! end of section#main-content -->
+
+</div><!--! end of #main -->
+</div> <!--! end of #container -->
+
+<!--<%= link_to "Lend Money", :browse_listings %><br/>
+Borrow Money<br/>
+Gems<br/>-->

@@ -1,0 +1,49 @@
+<div class="container clearfix">
+	<div id="main-holder" role="main">	
+		<section id="main-content">
+	    	<div class="columns">
+	            <div class="block clearfix">
+	            <header class="section-headline">
+	                <h3>Spot <span class="blue"><%= @user.first_name %></span></h3>
+	            </header>
+	            	<div class="full_column">
+	                	<header class="box-headline">
+		                    <h4><%= @spot_listing.title %></h4>
+		                </header>
+               
+		                <div class="content">
+		                    <div class="one_half">
+		                    	<h3>Amount Needed: <%= number_to_currency(@spot_listing.amount, :unit => "$")%></h3>
+		                        <p><%= @spot_listing.description %></p>
+		                    </div>
+                   
+		                    <div class="one_half last">
+								<h3>Borrower: <%= @user.first_name %> <%= @user.last_name %></h3>
+								<div class="one_half">
+									<%= image_tag @user.picture.url(:medium) %>
+								</div>
+								<div class="one_half last">
+									User description here
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="full_column">
+						<div class="container">
+							<% if current_user %>
+							<div class="lines">
+								<% if @spot_listing.completed = false %>
+									<%= link_to "Spot this person now!", complete_loan_path(@spot_listing.id, current_user.id), :class => "round-button blue"%>
+								<% end %>
+							</div>
+							<% else %>
+								<%= render 'account_form', :header => "in order to spot money"%>
+							<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

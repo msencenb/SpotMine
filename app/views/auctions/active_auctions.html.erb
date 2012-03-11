@@ -1,0 +1,34 @@
+<div class="container clearfix">
+	<div id="main-holder" role="main">	
+		<section id="main-content">
+	    	<div class="columns">
+	            <div class="block clearfix">
+            
+	            <header class="section-headline">
+	                <h3>Bid on <span class="blue">Skills</span></h3>
+	            </header>
+
+	            <% @auctions.each do |auction| %>
+	            	<div class="full_column">
+	                	<header class="box-headline">
+		                    <h4><%= auction.title %></h4>
+		                </header>
+                
+		                <div class="content">
+		                    <div class="one_half">
+		                    	<h3>Description</h3>
+		                        <p><%= auction.description %></p>
+		                    </div>
+                    
+		                    <div class="one_half last">
+								<h3>Time Left: <%= distance_of_time_in_words(Time.now, auction.time_end, true)%></h3>
+		                        <p><%= link_to "More Info", auction, :class => "round-button blue" %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

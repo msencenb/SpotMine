@@ -1,0 +1,60 @@
+#bg {
+  background-color: #ccc;
+  width: 990px;
+  height: 270px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+#object-carousel {
+  position: relative;
+  z-index: 2;
+}
+#object-carousel div {
+  position: relative;
+  float: left;
+  width:960px;
+  height:350px;
+}
+#object-carousel div > * {
+  position: absolute;
+}
+#object-carousel img.img-front {
+  left: 30px;
+  top: 0;
+  z-index: 4;
+}
+#object-carousel img.img-back {
+  left: 300px;
+  top: 50px;
+  z-index: 3;
+}
+#object-carousel h3 {
+  width: 300px;
+  left: 675px;
+  top: 110px;
+  margin: 0;
+}
+#object-carousel p {
+  width: 275px;
+  left: 675px;
+  top: 150px;
+  margin: 0;
+}
+#object-carousel a {
+  outline: none;
+  display: block;
+  width: 100px;
+  left: 675px;
+  top: 215px;
+  padding:8px 20px;
+  text-align:center;
+}
+
+/* Direction Nav */
+.object-carousel-direction-nav { margin:0; padding:0; list-style-type:none;}
+.object-carousel-direction-nav li a {width: 16px; height: 21px; margin: -13px 0 0; display: block; background: url(../img/carousel_control.png) 0 0 no-repeat; position: absolute; top: 50%; cursor: pointer; text-indent: -9999px;}
+.object-carousel-direction-nav li #next {background-position: -18px 0; right: -50px;}
+.object-carousel-direction-nav li #prev {left: -50px;}

@@ -1,0 +1,98 @@
+<div class="container clearfix">
+	<div id="main-holder" role="main">	
+		<section id="main-content">
+	    	<div class="columns">
+	            <div class="block clearfix">
+	            <header class="section-headline">
+	                <h3><span class="blue">Dashboard</span></h3>
+	            </header>
+					<% if notice %>
+					<div class="notification-box success">
+						<%= notice %>
+					</div>
+				    <% end %>
+	
+	            	<div class="full_column">
+	                	<header class="box-headline">
+		                    <h4>Welcome back <%= @user.first_name %></h4>
+		                </header>
+		                <div class="content">
+		                    You're current gem balance is <%= @user.gem_balance %>
+						</div>
+					</div>
+					<div class="full_column">
+						<header class="box-headline">
+		                    <h4>Auctions you have won</h4>
+		                </header>
+		                <div class="content">
+							 <% @won.each do |w| %>
+									<div class="one_half">
+										<%= a.title %>
+									</div>
+									<div class="one_half last">
+										<%= link_to "View Auction", auction_path(w), :class => "styled-button blue"%>
+									</div>
+								<% end %>
+						</div>
+					</div>
+					<div class="full_column">
+	                	<header class="box-headline">
+		                    <h4>Auctions you have created</h4>
+		                </header>
+		                <div class="content">
+		                    <% @auctions.each do |a| %>
+								<div class="one_half">
+									<%= a.title %>
+								</div>
+								<div class="one_half last">
+									<%= link_to "View Auction", auction_path(a), :class => "styled-button blue"%>
+								</div>
+							<% end %>
+							<div class="one_half">
+								<%= link_to "Create New Auction", new_auction_path, :class => "styled-button blue"%>
+							</div>
+						</div>
+					</div>
+					<div class="full_column">
+						<header class="box-headline">
+		                    <h4>Spots you have asked for</h4>
+		                </header>
+						<div class="content">
+							<% @user.spot_listings.each do |listing| %>
+								<div class="one_half">
+									<%= listing.title %>
+								</div>
+								<div class="one_half last">
+									<%= link_to "view listing", spot_listing_path(listing), :class => "styled-button blue" %>
+								</div>
+							<% end %>
+								<div class="one_half">
+									<%= link_to "Ask for a spot!", new_spot_listing_path, :class => "styled-button blue" %>
+								</div>
+						</div>
+					</div>
+					<div class="full_column">
+						<header class="box-headline">
+		                    <h4>People you have spotted</h4>
+		                </header>
+						<div class="content">
+							<% @lended.each do |loan| %>
+								<div class="one_half">
+									<%= loan.user.first_name %> - <%= loan.title%>
+								</div>
+								<div class="one_half last">
+									<%= link_to "view listing", spot_listing_path(loan), :class => "styled-button blue"%>
+								</div>		
+							<% end %>
+								<div class="one_half">
+									<%= link_to "Browse Spot Listings", browse_listings_path, :class => "styled-button blue" %>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+
+
