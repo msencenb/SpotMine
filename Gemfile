@@ -11,7 +11,7 @@ gem "rmagick"
 
 gem "aws-s3", "~> 0.6.2"
 gem "aws-sdk"
-
+gem "thin"
 gem "paperclip"
 
 # Gems used only for assets and not required
