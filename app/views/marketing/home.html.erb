@@ -35,7 +35,10 @@
               </figure>
               <div class="content">
                   <p><strong>Asking for money is awkward.</strong> Spotmine eliminates this awkwardness through the social currency called gems. When someone lends you money they get a certain amount of gems they can spend to complete projects, so they get a little something extra as well!</p>
-                  <p><a class="read-more" href="#">Borrow Money Today!<span>&rarr;</span></a></p>
+				  <p><%= link_to new_spot_listing_path, :class => "read-more" do %>
+                    Borrow Money Today!<span>&rarr;</span>
+					<% end %>
+				</p>
               </div>
           </div>
           <div class="one_third main-holder">
@@ -49,7 +52,10 @@
               </figure>
               <div class="content">
                   <p>When you lend money you get gems. When you receive money you have to pay back gems (in addition to fulfilling your loan). This <strong>'social interest'</strong> ensures there is less awkwardness between friends, but also allows you to get a lower rate than a traditional bank loan.</p>
-                  <p><a class="read-more" href="#">View Gem Auctions <span>&rarr;</span></a></p>
+					<p><%= link_to auction_listings_path, :class => "read-more" do %>
+                       View Gem Auctions <span>&rarr;</span>
+					  <% end %>
+					</p>
               </div>
           </div>
       </div><!--! end of .about-us -->
