@@ -31,10 +31,12 @@
 					<div class="full_column">
 						<div class="container">
 							<% if current_user %>
-							<div class="lines">
-								<% if @spot_listing.completed == false %>
-									<%= link_to "Spot this person now!", complete_loan_path(@spot_listing.id, current_user.id), :class => "round-button blue"%>
-								<% end %>
+								<% if current_user.id != @spot_listing.user.id %>
+								<div class="lines">
+									<% if @spot_listing.completed == false %>
+										<%= link_to "Spot this person now!", complete_loan_path(@spot_listing.id, current_user.id), :class => "round-button blue"%>
+									<% end %>
+								<% end%>
 							</div>
 							<% else %>
 								<%= render 'account_form', :header => "in order to spot money"%>
