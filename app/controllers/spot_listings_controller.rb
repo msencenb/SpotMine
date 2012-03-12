@@ -97,8 +97,8 @@ class SpotListingsController < ApplicationController
     @spot_listing.completed = true
     logger.error @borrower.gem_balance
     logger.error @spot_listing
-    @borrower.gem_balance = @borrower.gem_balance - @spot_listing.amount
-    @lender.gem_balance = @lender.gem_balance + @spot_listing.amount
+    @borrower.gem_balance = @borrower.gem_balance - @spot_listing.amount.to_i
+    @lender.gem_balance = @lender.gem_balance + @spot_listing.amount.to_i
     respond_to do |format|
       if @spot_listing.save && @borrower.save && @lender.save
         format.html {redirect_to user_dashboard_url, notice: 'Success! Money has been sent and gems added to your account'}
